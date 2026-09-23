@@ -354,6 +354,13 @@ jobs:
         if: inputs.mode == 'build' && steps.appcache.outputs.cache-hit != 'true'
         env:
           UDID: ${{ steps.sim.outputs.udid }}
+          NODE_ENV: production
+          EXPO_PUBLIC_CONVEX_URL: https://clean-spider-865.convex.cloud
+          EXPO_PUBLIC_CONVEX_SITE_URL: https://clean-spider-865.convex.site
+          EXPO_PUBLIC_REVENUECAT_IOS_KEY: test_rlEmwWAPMlKQyTJCyHowCfQbELK
+          EXPO_PUBLIC_REVENUECAT_ANDROID_KEY: test_rlEmwWAPMlKQyTJCyHowCfQbELK
+          EXPO_PUBLIC_REVENUECAT_ENTITLEMENT_ID: pro
+          EXPO_PUBLIC_REVENUECAT_OFFERING_ID: default
         run: |
           set -euo pipefail
           # Monorepo: the Expo app lives in apps/native (deps were installed at repo root).
@@ -422,6 +429,13 @@ jobs:
         env:
           UDID: ${{ steps.sim.outputs.udid }}
           CACHE_HIT: ${{ steps.appcache.outputs.cache-hit }}
+          NODE_ENV: production
+          EXPO_PUBLIC_CONVEX_URL: https://clean-spider-865.convex.cloud
+          EXPO_PUBLIC_CONVEX_SITE_URL: https://clean-spider-865.convex.site
+          EXPO_PUBLIC_REVENUECAT_IOS_KEY: test_rlEmwWAPMlKQyTJCyHowCfQbELK
+          EXPO_PUBLIC_REVENUECAT_ANDROID_KEY: test_rlEmwWAPMlKQyTJCyHowCfQbELK
+          EXPO_PUBLIC_REVENUECAT_ENTITLEMENT_ID: pro
+          EXPO_PUBLIC_REVENUECAT_OFFERING_ID: default
         run: |
           set -euo pipefail
           cd apps/native
